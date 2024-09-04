@@ -17,4 +17,4 @@ jobs:
             password: ${{ secrets.DOCKER_PASSWORD }}
             registry: docker.io
             repository: sweli0/cd
-            tags: ${{ GITHUB_SHA }}
+            tag_with_sha: true
