@@ -30,10 +30,11 @@ jobs:
             registry: docker.io
             repository: sweli0/cd
             tag_with_sha: true
+            tags: latest
         - name: Run Trivy vulnerability scanner
           uses: aquasecurity/trivy-action@master
           with:
-            image-ref: 'docker.io/<your-username>/<your-image>:${{ github.sha }}'
+            image-ref: 'docker.io/sweli0/mywebserver'
             format: 'table'
             exit-code: '1'
             ignore-unfixed: true
