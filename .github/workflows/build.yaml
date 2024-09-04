@@ -17,9 +17,4 @@ jobs:
             password: ${{ secrets.DOCKER_PASSWORD }}
             registry: docker.io
             repository: sweli0/cd
-            tag_with_sha: true
-        ‐ name: push
-          uses: docker/push-action@v1
-          with:
-            registry: myregistry
-            tags: ${{ outputs.build.tags }}
+            tags: ${{ GITHUB_SHA }}
